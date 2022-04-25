@@ -8,6 +8,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class SlotHandler {
@@ -21,6 +22,17 @@ public class SlotHandler {
 	 private LocalTime slot1; 
 	 @Enumerated(EnumType.STRING)
 	 private AppointmentStatus appointmentStatus;
+	 
+	@OneToOne
+	 Doctor doctor; 
+	 
+	 
+	public Doctor getDoctor() {
+		return doctor;
+	}
+	public void setDoctor(Doctor doctor) {
+		this.doctor = doctor;
+	}
 	public int getId() {
 		return id;
 	}
